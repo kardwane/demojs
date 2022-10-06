@@ -17,29 +17,28 @@ const giftArray = [
   "un pc portable",
   "une voiture thermique avec un bidon d'essence vide",
 ]
-
-let priceToFind = Math.floor(Math.random() * 100)
-let selectedGift = Math.ceil(Math.random() * (giftArray.length - 1)) // prix aléatoire entre 1 et 100
-let tryNumber = 0 //initialisation
-
-console.log(priceToFind) // cheat code
-
-function start() {
-  /*
+/*
 Math.random() => genere un chiffre a virgule compris entre 0 et 1 exemple 0,43235345346546565
 ensuite on multiplie le chiffre par la valeur max attendu (100 dans notre exemple, car le prix max possible est 100)
 mais on obtient toujours un resultat en nombre flotant (a virgule), ex : 23,4578999908908
 enfin il faut arrondir ce chiffre pour le convertir entier (Math.floor())
 */
-  priceToFind = Math.floor(Math.random() * 100) // prix aléatoire entre 1 et 100
-  /*
+let priceToFind = Math.floor(Math.random() * 100)
+/*
 pour choisir mon n° de cadeau, je genere un entier compris entre 0 
 et la taille de mon tableau (tabeau.lenght), cependant je n'oublie pas de faire longueur tableau 
 -1 pour prendre en compte le fait que la 1er case d'un tableau (en js, php..)est la case n°0
 */
-  selectedGift = Math.ceil(Math.random() * (giftArray.length - 1)) // prix aléatoire entre 1 et 100
+let selectedGift = Math.ceil(Math.random() * (giftArray.length - 1)) // prix aléatoire entre 1 et 100
+//je créer mon compteur d'essais, en l'initialisant à 0
+let tryNumber = 0
 
-  //je créer mon compteur d'essais, en l'initialisant à 0
+console.log(priceToFind) // cheat code
+
+function start() {
+  // je réinitialise les variables qui vont bien
+  priceToFind = Math.floor(Math.random() * 100) // prix aléatoire entre 1 et 100
+  selectedGift = Math.ceil(Math.random() * (giftArray.length - 1)) // cadeau aléatoire entre 1 et longeur tableau -1
   tryNumber = 0 //initialisation
 
   //je remet mon affichage à 0
@@ -47,6 +46,13 @@ et la taille de mon tableau (tabeau.lenght), cependant je n'oublie pas de faire 
   tryDone.textContent = "0 essai"
 
   console.log(priceToFind) // cheat code
+}
+
+//
+const displayNumTryLeft = () => {
+  const trySentence =
+    tryNumber > 1 ? `${tryNumber} essais` : `${tryNumber} essai`
+  return trySentence
 }
 
 //je lui ajoute une action sur l'evenement "click"
@@ -70,19 +76,20 @@ submitBtn.addEventListener("click", function (e) {
       resultContent = `Vous avez gagné le lot suivant : ${giftArray[selectedGift]}`
     } else if (inputPrice < priceToFind) {
       // j'ajoute un nouveau message à l'historique
-      resultContent += ", Plus grand!"
+      resultContent += tryNumber === 0 ? "Plus grand" : ", Plus grand"
     } else {
       // j'ajoute un nouveau message à l'historique
-      resultContent += ", Plus petit!"
+      resultContent += tryNumber === 0 ? "Plus petit" : ", Plus petit"
     }
     //afficher le nouvel historique
     result.textContent = resultContent
   }
 
   tryNumber++ // je compte un essai supplémentaire => tryNumber = tryNumber + 1
-  tryDone.textContent = tryNumber + " essais"
+  tryDone.textContent = displayNumTryLeft() // j'actualise l'affichage du nombre d'essai
 })
 
+// j'ajoute l'action start() sur le click du bouton recommencer
 restartBtn.addEventListener("click", function () {
   start()
 })

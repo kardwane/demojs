@@ -33,25 +33,28 @@ let selectedGift = Math.ceil(Math.random() * (giftArray.length - 1)) // prix al�
 //je créer mon compteur d'essais, en l'initialisant à 0
 let tryNumber = 0
 
-console.log(priceToFind) // cheat code
+console.log(priceToFind) // j'affiche le prix à trouver en console
 
-function start() {
+// permet de recommencer une partie
+function restart() {
   // je réinitialise les variables qui vont bien
   priceToFind = Math.floor(Math.random() * 100) // prix aléatoire entre 1 et 100
   selectedGift = Math.ceil(Math.random() * (giftArray.length - 1)) // cadeau aléatoire entre 1 et longeur tableau -1
   tryNumber = 0 //initialisation
 
-  //je remet mon affichage à 0
+  // je remet mon affichage à 0
   result.textContent = ""
   tryDone.textContent = "0 essai"
 
-  console.log(priceToFind) // cheat code
+  console.log(priceToFind) // j'affiche le prix à trouver en console
 }
 
-//
+// fonction de mise à jour de l'affichage du nombre d'essai
 const displayNumTryLeft = () => {
+  //si plus d'un essai alors version pluriel, sinon version singulier
   const trySentence =
     tryNumber > 1 ? `${tryNumber} essais` : `${tryNumber} essai`
+  //je renvoi la phrase choisi au reste du programme
   return trySentence
 }
 
@@ -60,7 +63,6 @@ const displayNumTryLeft = () => {
 //ici j'associe une action sur le click de mon bouton
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault() // annule le comportement par défaut du formulaire => empeche la soumisson direct du formulaire
-  console.log(e)
 
   //recuperer le prix saisie et le comparer a mon prix mystere
   let inputPrice = parseInt(price.value)
@@ -89,9 +91,9 @@ submitBtn.addEventListener("click", function (e) {
   tryDone.textContent = displayNumTryLeft() // j'actualise l'affichage du nombre d'essai
 })
 
-// j'ajoute l'action start() sur le click du bouton recommencer
+// j'ajoute l'action restart() sur le click du bouton recommencer
 restartBtn.addEventListener("click", function () {
-  start()
+  restart()
 })
 
 //lancement de la musique du juste prix

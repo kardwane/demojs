@@ -98,5 +98,7 @@ restartBtn.addEventListener("click", function () {
 const generiqueJP = new Audio(
   "https://www.televisiontunes.com/uploads/audio/Generique%20du%20Juste%20Prix%20-%201998%20-%20France.mp3"
 )
+// j'active le parametre de musique en boucle
 generiqueJP.loop = true
+// je démarre la lecture de la musique
 generiqueJP.play()

@@ -93,3 +93,10 @@ submitBtn.addEventListener("click", function (e) {
 restartBtn.addEventListener("click", function () {
   start()
 })
+
+//lancement de la musique du juste prix
+const generiqueJP = new Audio(
+  "https://www.televisiontunes.com/uploads/audio/Generique%20du%20Juste%20Prix%20-%201998%20-%20France.mp3"
+)
+generiqueJP.loop = true
+generiqueJP.play()

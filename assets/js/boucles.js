@@ -14,7 +14,7 @@ dResult.innerHTML += "<p>en sortie de boucles, i vaut " + i + "</p>"
 
 dResult.innerHTML +="<br>===================================<br>"
 
-for(i=30; i<=40; i++){
+for(let i=30; i<=40; i++){
     dResult.innerHTML += "<p>nous sommes au tour n° " + i + "</p>"
 }
 

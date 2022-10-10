@@ -1,11 +1,11 @@
 "use strict";
 // ---------------------------- WHILE -------------------------
-let a = 0;
-// Tant que a est plus petit que 10
+let a = 0; // j'initialise mon compteur à 0
+// Tant que mon compteur est plus petit que 10
 while(a<10){
     // On répète les instructions qui sont entre les accolades.
-    console.log("a vaut ", a);
-    a++;
+    console.log("nous sommes au tour n° ", a);
+    a++; // incremente le compteur (on passe au tour suivant) a = a + 1
 }
 // ! ATTENTION d'avoir toujours un moyen de sortir de la boucle.
 while(true){
@@ -22,6 +22,7 @@ while(true){
         break;
     }
 }
+
 do{
     console.log("a vaut ", a);
     /* do while permet d'effectuer une action une première fois avant de vérifier
@@ -30,9 +31,10 @@ do{
 
 // --------------------------FOR---------------------------
 
+// for(let i = 10; i>0; i--){
 for(let i = 0; i<10; i++){
     /* La boucle for prend 3 paramètres séparés de ";" 
-        Le premier est la déclaration et définition d'une variable numérique
+        Le premier est la déclaration et définition d'une variable numérique : le point de départ 
         Le second la condition d'arrêt de la boucle
         Le troisième de combien doit augmenter (ou diminuer) la variable à chaque itération*/
     console.log("i vaut ", i);
@@ -47,7 +49,7 @@ for(let food in arr){
 }
 for(let carac in person){
     /* Utilisé sur un objet, on obtient le nom de toute les propriétés. */
-    console.log(carac, " -> ", person[carac]);
+    console.log(carac, " contient ", person[carac]);
 }
 // syntaxe: for("déclaration de variable" in "tableau/objet")
 for(let f of arr){

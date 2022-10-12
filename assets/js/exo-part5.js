@@ -90,6 +90,7 @@ result.textContent = cumul // affichage total pour terminer l'affiche du calcul
 */
 // =================== exo 6 ============================
 //variables de départ
+/*
 let reponseExo6 = parseInt(
 	prompt("Donnez moi un nombre, je vous donnerai sa factorielle")
 );
@@ -110,3 +111,38 @@ for(let i = 1; i<=reponseExo6; i++){
 
 // result.textContent = "La factorielle de " + reponseExo6 + " est " + total; // affichage total pour terminer l'affiche du calcul
 result.textContent = `La factorielle de ${reponseExo6} est ${total}`; // affichage total pour terminer l'affiche du calcul
+*/
+
+// =================== exo 7 ============================
+/*
+let valMax = 0, position = 0;
+
+for (let i = 1; i <= 6; i++) {
+	let nouvelleValeur = parseInt(prompt("donne moi une valeur"));
+    //si ma nouvelle valeur est supérieur a la valeur max, alors je met a jour
+    if(nouvelleValeur > valMax){
+        valMax = nouvelleValeur // je met ma nouvelle valeur max
+        position = i // je mémorise la position
+    }
+}
+
+console.log(`la valeur est ${valMax}, à la position n°${position}`)
+*/
+
+// =================== exo 8 ============================
+let valMax = 0,
+	position = 1,
+	i = 1;
+let valeurSaisie = parseInt(prompt("donne moi une valeur"));
+
+while (valeurSaisie !== 0) {
+	valeurSaisie = parseInt(prompt("donne moi une valeur"));
+	//si ma nouvelle valeur est supérieur a la valeur max, alors je met a jour
+	if (valeurSaisie > valMax) {
+		valMax = valeurSaisie; // je met ma nouvelle valeur max
+		position = i; // je mémorise la position
+	}
+	i++
+}
+
+console.log(`la valeur est ${valMax}, à la position n°${position}`);

@@ -8,12 +8,13 @@ let tableau = ["a suprimer", "texte", 15, true, "toto", "lorem"]
 // récuperer la valeur d'une case
 let array1 = [5, 12, 8, 130, 44]
 let index = 2
-console.log(tableau[index]) // classique
+console.log(tableau[index]) // classique => nous donne 15
+console.log(array1[index]) // classique => nous donne 8
 
 // .at(index) version
 // positive index start from left
 console.log(
-  `Using an index of ${index} the item returned is ${array1.at(index)}`
+  `Using an index of ${index} the item returned is ${array1.at(index)}` // on obtient 8 là aussi
 )
 // expected output: "Using an index of 2 the item returned is 8"
 
@@ -28,6 +29,7 @@ console.log(tableau)
 
 // ajouter un element en début de tableau
 tableau = ["nouvelle 1ere valeur", ...tableau]
+console.log(tableau)
 
 // retirer le dernier element du tableau
 tableau.pop()
@@ -67,6 +69,21 @@ tableau.map((item, index) => {
   return contenuTableau
 })
 
+//boucle for .. of, interessant pour lister le contenu seul d'un tableau
+for(let valeurCase of tableau){
+  /* for of fonctionne comme for in mais au lieu de récupérer à chaque itération
+  l'index, il récupère directement les valeurs des tableaux. */
+  console.log(valeurCase);
+}
+
+//boucle for ... in
+for(let indiceCase in tableau){
+  /* le for in va récupérer les index des différents éléments du tableau 
+  si le tableau contient 3 élément, le for in fera 3 itérations 
+  sa variable valant à tour de rôle 0, 1 puis 2.*/
+  console.log(indiceCase, " -> ", tableau[indiceCase]);
+}
+
 document.querySelector("#result").innerHTML = contenuTableau
 
 // assigné des variables depuis un tableau (spread operator)
@@ -74,14 +91,14 @@ document.querySelector("#result").innerHTML = contenuTableau
 // on peut obtenir a=1, b=3, c=3 en faisant
 tableau = [1, 3, 5]
 const [a, b, c] = tableau
-console.log(a, b, c)
+console.log(a, b, c) // affichera 1, 3, 5
 
 // la concaténation de tableaux en JS
 const tab1 = [1, 2, 3]
 const tab2 = [4, 5]
 
 let tab3 = tab1.concat(tab2)
-tab3 = [...tab1, ...tab2] // alternative
+tab3 = [...tab1, ...tab2] // alternative => [1, 2, 3, 4, 5]
 
 // trouver la valeur numérique la plus élevé dans un tableau
 console.log(Math.max(...tab3)) // 5
@@ -91,8 +108,10 @@ console.log(Math.min(...tab3)) // 1
 
 // le filtrage de tableau
 const words = ["spray", "limit", "elite", "exuberant", "destruction", "present"]
+const numArr = [1,45,23,89,56,78,45,12]
+const resultNum = numArr.filter((num)=>num>50) // [89,56,78]
 const result = words.filter((word) => word.length > 6)
-console.log(result)
+console.log(result, resultNum)
 // expected output: Array ["exuberant", "destruction", "present"]
 // filter () renvoi un array
 

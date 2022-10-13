@@ -1,3 +1,4 @@
+const result = document.querySelector('#result');
 // exo1 demander une chiffre entre 1 et 3
 /*
 let reponseExo1 = 0;
@@ -130,6 +131,7 @@ console.log(`la valeur est ${valMax}, à la position n°${position}`)
 */
 
 // =================== exo 8 ============================
+/*
 let valMax = 0,
 	position = 1,
 	i = 1;
@@ -146,3 +148,67 @@ while (valeurSaisie !== 0) {
 }
 
 console.log(`la valeur est ${valMax}, à la position n°${position}`);
+*/
+// =================== exo 9 ============================
+/*
+const totalBasket = parseInt(prompt("total de votre panier"));
+const cashGiven = parseInt(prompt("Argent donné en caisse"));
+let rest = cashGiven - totalBasket,
+	bucks10 = 0,
+	bucks5 = 0,
+	bucks1 = 0;
+
+// tant que le reste a rendre est > à 10€, j'incremente le nombre de billet de 10€
+// et de diminue le reste a payer de 10€
+while (rest >= 10) {
+	rest -= 10;
+	bucks10++;
+} // en sorti de boucle mon reste à payer est forcement inférieur a 10€
+
+//si mon reste a payer est compris entre 5 et 10
+//j'ajoute un billet de 5€ au total a rendre et je diminue le reste à payer de 5
+if (rest >= 5) {
+	rest -= 5;
+	bucks5=1;
+}
+
+// a ce niveau là, mon reste a payer et forcement inférieur a 5, 
+// il correspond donc au nombre de pieces de 1€ à rendre au client
+bucks1 = rest
+
+//Affichage finale
+result.textContent = `la caisse vous rend ${cashGiven - totalBasket}€, soit ${bucks10} billet de 10€, ${bucks5} billet de 5€, ${bucks1} piece de 1€, au plaisir de vous revoir chez nous :)`
+console.log(rest.textContent);
+*/
+
+// =================== exo 10 ============================
+/*
+//je déclare ma fonction factorielle
+function factorielle(nombre) {
+    let total = 1;
+    //je calcule ma factorielle
+	for (let i = 1; i <= nombre; i++) {
+        total = total * i; // calcul masqué pour l'utilisateur
+		// 	total *= i; // version raccourcie
+	}
+	//une fois le résultat obtenu, je dois renvoyer le resultat au reste du code
+	return total;
+}
+
+// je récupere le nombre de chavaux partant et le nombre de chevaux joués
+const horsesIn = parseInt(prompt('Combien de chevaux sont alignés au départ?'))
+const horsesPlay = parseInt(prompt('Combien de chevaux avez-vous joués?'))
+
+const factoN = factorielle(horsesIn) // n!
+const factoP=factorielle(horsesPlay) // p!
+const factoNP=factorielle(horsesIn-horsesPlay) // (n-p)!
+
+//x = n!/(n-p)!
+const orderChance = factoN/factoNP
+//Y = n!/(p!*(n-p)!)
+const unorderChance = factoN/(factoP*factoNP)
+
+//affichage du resultat
+result.textContent = `Chance de gagné dans l'ordre : 1 chance sur ${orderChance}, dans le désorde : 1 chance sur ${unorderChance}`
+console.log(rest.textContent);
+*/

@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: auto 5vw;
+}
+
+ul{
+    display: flex;
+}
+
+li{
+    margin: 1em;
+    padding: 0.5em;
+    list-style: none;
+    border: 1px solid green;
+    border-radius: 1em;
+}
+
+li:hover{
+    border: 1px solid red;
+    background-color: green;
+    color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: aliceblue;
+}
+
+
+.dark-mode, .dark-mode a{
+    background-color: rgb(22, 21, 21);
+    color: aliceblue;
+}

@@ -273,25 +273,25 @@ let value = 1, //pour récuperer la valeur
 	maxValue = 0, //pour stocker la valeur maximum trouvé
 	maxPosition = 0; // pour stocker la position de la valeur max
 
-// //tant que la valeur saisie est différent de 0, on continue la saisie
-// while (value !== 0) {
-// 	//je récupere la valeur utilisateur
-// 	value = parseInt(
-// 		prompt(
-// 			`Donne moi la valeur n°${
-// 				i + 1
-// 			} (pour arreter la saisie, entrer la valeur 0`
-// 		) // ${i+1} permet de rendre l'affichage plus humain (evite de commencer la saisie n°0)
-// 	);
+//tant que la valeur saisie est différent de 0, on continue la saisie
+while (value !== 0) {
+	//je récupere la valeur utilisateur
+	value = parseInt(
+		prompt(
+			`Donne moi la valeur n°${
+				i + 1
+			} (pour arreter la saisie, entrer la valeur 0`
+		) // ${i+1} permet de rendre l'affichage plus humain (evite de commencer la saisie n°0)
+	);
 
-// 	//je vérifie si je dois mettre à jour les valeurs max et position max
-// 	if (value > maxValue) {
-// 		maxValue = value;
-// 		maxPosition = i;
-// 	}
+	//je vérifie si je dois mettre à jour les valeurs max et position max
+	if (value > maxValue) {
+		maxValue = value;
+		maxPosition = i;
+	}
 
-// 	i++; // incrementation du compteur de saisie
-// }
+	i++; // incrementation du compteur de saisie
+}
 
 //version tableaux
 let myArray = []; //le tableaux contenant les saisies utilisateurs
@@ -311,14 +311,14 @@ while (value !== 0) {
 
 // je cherche la valeur max et sa position
 //version foreach
-myArray.forEach((value, index) => {
-	if (value > maxValue) {
-		maxValue = value;
-		maxPosition = index;
-	}
-});
+// myArray.forEach((value, index) => {
+// 	if (value > maxValue) {
+// 		maxValue = value;
+// 		maxPosition = index;
+// 	}
+// });
 
-//version map
+// version map
 // myArray.map((value, index) => {
 // 	if (value > maxValue) {
 // 		maxValue = value;
@@ -345,19 +345,19 @@ while (grade !== 0) {
 	sum += grade; // je cumul mes notes dans le total des notes
 }
 
-//je retire le dernier 0
+//je retire le dernier 0 pour eviter de baisser la moyenne sans raison
 grades.pop()
 
 //calcul de la moyenne
 avg = (sum/grades.length).toFixed(2) // on limite le résultat a 2 chiffres après la virgule
 
-//========= v1 : manuellement
+// //========= v1 : manuellement
 // //je cherche toutes les valeurs supérieur à la moyenne
 // //v1 : boucle for .. of
-// result.textContent = `avec une moyenne de ${avg}, les notes supérieurs à la moyenne sont : `
-//la boucle for of est utilisé dans cet exemple, mais une boucle for, while, foreach ou encore map peuvent être utilisés en alternative
-// for(value of grades){
-//     if(value>avg){
+// // result.textContent = `avec une moyenne de ${avg}, les notes supérieurs à la moyenne sont : `
+// // la boucle for of est utilisé dans cet exemple, mais une boucle for, while, foreach ou encore map peuvent être utilisés en alternative
+// for(grade of grades){
+//     if(grade>avg){
 //         result.textContent += value+","
 //     }
 // }
@@ -366,7 +366,7 @@ avg = (sum/grades.length).toFixed(2) // on limite le résultat a 2 chiffres apr�
 // result.textContent = result.textContent.substring(0,result.textContent.lastIndexOf(","))
 
 //============ v2 : avec les filtres
-let bestGrades = grades.filter((value) => value > avg);
+let bestGrades = grades.filter((grade) => grade > avg);
 
 //affichage
 result.textContent = `avec une moyenne de ${avg}, les notes supérieurs à la moyenne sont : `;

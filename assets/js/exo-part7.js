@@ -27,58 +27,64 @@ while (value !== 0) {
 result.textContent = (isConsecutif) ? "Consécutif" : "Non consécutif";
 */
 //! ===============================EXO 2============================== trier un tableau avec le tri à bulle et le tri par insertion
-
 /*
 let myArray = [12, 45, 32, 65, 23, 56, 87, 54, 78]
 
 result.innerHTML = `<p>tableau de départ : </p><p>${myArray.toString()}</p>`
 
-// 
-//  * version tri par insertion
-//  * explication de ce tri par une danse : https://www.youtube.com/watch?v=EdIKIf9mHk0&list=PLOmdoKois7_FK-ySGwHBkltzB11snW7KQ&index=1
-//  */
-// //pour i de 1 à longueur tableau
-// for (let i = 1; i < myArray.length; i++) {
-// 	//je copie la valeur en cours
-// 	let currentValue = myArray[i];
+/*
+ * version tri par insertion
+ * explication de ce tri par une danse : https://www.youtube.com/watch?v=EdIKIf9mHk0&list=PLOmdoKois7_FK-ySGwHBkltzB11snW7KQ&index=1
+ */
 
-// 	// décaler les éléments de tableau[0] à tableau[i-1] qui sont plus grands que x, en partant de tableau[i-1]
-// 	let j = i;
-// 	// tant que j > 0 et que la valeur précedente est supérieur à la valeur en cours
-// 	while (j > 0 && myArray[j - 1] > currentValue) {
-// 		myArray[j] = myArray[j - 1];
-// 		j--;
-// 	}
-// 	// placer x dans le "trou" laissé par le décalage
-// 	myArray[j] = currentValue
-// }
+/*
+//pour i de 1 à longueur tableau
+for (let i = 1; i < myArray.length; i++) {
+	//je copie la valeur en cours
+	let currentValue = myArray[i];
+
+	// décaler les éléments de tableau[0] à tableau[i-1] qui sont plus grands que x, en partant de tableau[i-1]
+	let j = i;
+	// tant que j > 0 et que la valeur précedente est supérieur à la valeur en cours
+	while (j > 0 && myArray[j - 1] > currentValue) {
+		myArray[j] = myArray[j - 1];
+		j--;
+	}
+	// placer x dans le "trou" laissé par le décalage
+	myArray[j] = currentValue
+}
+*/
 
 /*
  * version tri par à bulle
  * explication de ce tri par une danse : https://www.youtube.com/watch?v=semGJAJ7i74&list=PLOmdoKois7_FK-ySGwHBkltzB11snW7KQ&index=2
  */
-
-// let isSorted = false; // on pense que le tableau n'est pas trié
-// while(!isSorted){	//tant que le tri n'est pas fini, on continue le tri
-// 	isSorted = true; // on pense que le tableau est trié
-// 	for(let i=0; i<myArray.length-1; i++ )	{ // on vérifie le tri
-// 		if(myArray[i]>myArray[i+1]){	// si ma valeur actuelle > a la valeur suivante du tableau, on inverse et on passe le tableau a "non trié"
-// 			//inversion => cf verre d'eau et de coca a inverser
-// 			let temp = myArray[i]
-// 			myArray[i] = myArray[i+1]
-// 			myArray[i+1] = temp
-// 			//tri non fini
-// 			isSorted = false
-// 		}
-// 	}
-// }
+/*
+let isSorted = false // on pense que le tableau n'est pas trié
+while (!isSorted) {
+  //tant que le tri n'est pas fini, on continue le tri
+  isSorted = true // on pense que le tableau est trié
+  for (let i = 0; i < myArray.length - 1; i++) {
+    // on vérifie le tri
+    if (myArray[i] > myArray[i + 1]) {
+      // si ma valeur actuelle > a la valeur suivante du tableau, on inverse et on passe le tableau a "non trié"
+      //inversion => cf verre d'eau et de coca a inverser
+      let temp = myArray[i]
+      myArray[i] = myArray[i + 1]
+      myArray[i + 1] = temp
+      //tri non fini
+      isSorted = false
+    }
+  }
+}
+*/
 
 /*
  * version sort() de js : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
  */
 
 // myArray.sort((a, b) => a - b) //croissant
-// // myArray.sort((a, b) => b - a) //décroissant
+// myArray.sort((a, b) => b - a) //décroissant
 
 // result.innerHTML += `<p>tableau trié : </p><p>${myArray.toString()}</p>`
 
@@ -91,7 +97,7 @@ result.innerHTML = `<p>tableau de départ : </p><p>${myArray.toString()}</p>`
 /*
 let myArray = [12, 45, 32, 65, 23, 56, 87, 54, 78]
 result.innerHTML = `<p>tableau de départ : </p><p>${myArray.toString()}</p>`
- 
+
 //version manuel
 // let arrayResult = []
 // // je parcours mon tableau initial, et je créer un nouveau tableau ou j'assine la valeur de tableau initial [taille tableau - i]
@@ -100,11 +106,18 @@ result.innerHTML = `<p>tableau de départ : </p><p>${myArray.toString()}</p>`
 // }
 // result.innerHTML += `<p>tableau inversé : </p><p>${arrayResult.toString()}</p>`
 
+//version simple
+let arrayResult = []
+// je parcours mon tableau initial, et je créer un nouveau tableau ou j'assine la valeur de tableau initial [taille tableau - i]
+for (let i = myArray.length; i >= 0; i--) {
+  arrayResult.push(myArray[i])
+}
+result.innerHTML += `<p>tableau inversé : </p><p>${arrayResult.toString()}</p>`
+
 //version js : methode reverse :
 // * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
 result.innerHTML += `<p>tableau inversé : </p><p>${myArray.reverse()}</p>`
 */
-
 //! ===============================EXO 4============================== supprimer une case de tableau
 /*
 let myArray = [12, 8, 4, 45, 64, 9, 2]
@@ -112,18 +125,18 @@ let myArray = [12, 8, 4, 45, 64, 9, 2]
 result.innerHTML = `<p>tableau de départ : </p><p>${myArray.toString()}</p>`
 
 const nb = parseInt(
-  prompt("Quel case souhaitez-vous supprimer (1ere case = 1)?")
+  prompt("Quel case souhaitez-vous supprimer (1ere case = 0)?")
 )
 
-// j'utilise la méthode splaice pour supprimer une case identifié de mon tableau : 
+// j'utilise la méthode splice pour supprimer une case identifié de mon tableau : 
 // * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/splicev
-myArray.splice(nb - 1, 1)
+myArray.splice(nb, 1)
 
 result.innerHTML += `<p>tableau après suppression : </p><p>${myArray.toString()}</p>`
 */
 
 //! ===============================EXO 5============================== chercher un mot dans un tableau
-
+/*
 let myArray = [
   "bonjour",
   "formation",
@@ -155,10 +168,11 @@ if (isFind) {
 
 //version JS
 // * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-// const resultat = myArray.find((mot) => mot === recherche)
+const resultat = myArray.find((mot) => mot === recherche)
 
-// if (resultat !== undefined) {
-//   console.log(`${recherche} trouvé dans ${myArray.toString()}`)
-// } else {
-//   console.log(`${recherche} non trouvé dans ${myArray.toString()}`)
-// }
+if (resultat !== undefined) {
+  console.log(`${recherche} trouvé dans ${myArray.toString()}`)
+} else {
+  console.log(`${recherche} non trouvé dans ${myArray.toString()}`)
+}
+*/

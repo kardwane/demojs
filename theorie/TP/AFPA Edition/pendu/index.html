@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Le pendu</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+</head>
+<body>
+<section class="container">
+    <div class="row mt-5">
+        <div class="col-8">
+            <p>Etat mot : <span id="lblMotCache"></span></p>
+            <form action="" method="get" id="monForm">
+                <div class="form-group row">
+                    <label for="txtLettre" class="col-sm-2 col-form-label">Proposition</label>
+                    <input type="text" id="txtLettre" class="col-sm-8 form-control">
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" id="btnSubmit" class="btn btn-primary mx-auto">Deviner</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            <div id="divResultat">
+                <img src="assets/img/le-jeu-du-pendu.jpg" class="img-fluid"/>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="divLettreJoues">
+        <p class="col-2 text-info">Lettres joués</p>
+        <div class="col text-light" id="lettreJoues">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center pt-5">
+            <button class="btn btn-info" id="btnReset" type="button">Recommencer</button>
+        </div>
+    </div>
+</section>
+<script src="assets/js/inc.js" defer></script>
+<script src="assets/js/script.js" defer></script>
+</body>
+</html>

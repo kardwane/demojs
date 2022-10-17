@@ -1,0 +1,4 @@
+.container>article, .container>#divTodo{
+    float: left;
+    margin: 1em;
+}

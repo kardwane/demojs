@@ -1,0 +1,17 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+
+form{
+    margin: 2vw;
+    padding: 1em;
+}
+
+.cacher{
+    visibility: hidden;
+}
+
+.montrer{
+    visibility: visible;
+}

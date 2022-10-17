@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocator</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+    <style>
+        .map {
+            height: 400px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aut beatae blanditiis
+    consequuntur debitis earum fugiat id, inventore laborum nemo non nostrum placeat porro, qui quibusdam saepe sed
+    voluptate.
+</div>
+<div class="p">Aspernatur cupiditate, deleniti modi perferendis quis sit suscipit? At aut consequatur dolor doloremque
+    in ipsum maiores, minima, officia quis recusandae rem sapiente sed voluptatum. Ab dolore fugit nihil non voluptatem?
+</div>
+<div class="p">Asperiores beatae corporis cupiditate dolor dolore ducimus eligendi enim incidunt inventore labore modi
+    molestiae nemo nobis, nulla officia pariatur possimus quaerat recusandae rem repellendus sequi vel, veniam vero
+    vitae voluptate.
+</div>
+<div class="p">Aliquam animi aperiam aut autem distinctio dolore ea enim et explicabo id impedit iure laboriosam,
+    laudantium libero magnam nesciunt placeat porro provident quaerat quam qui quo quod rerum totam vel.
+</div>
+
+    <h1>Localisateur</h1>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+
+    <h2>La carte</h2>
+
+    <div id="mymap" class="map"></div>
+
+    <p><a href="https://www.openstreetmap.org/fixthemap" target="_blank"> Signaler un problème / Corriger la carte </a></p>
+
+    <script type="text/javascript"
+            src="node_modules/jquery/dist/jquery.min.js">
+    </script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin=""></script>
+    <script type="text/javascript"
+            src="js/geolocator.js">
+        getLocation();
+    </script>
+
+</body>
+</html>

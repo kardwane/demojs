@@ -94,12 +94,14 @@ result.innerHTML = `<p>tableau de départ : </p><p>${myArray.toString()}</p>`
  
 //version manuel
 // let arrayResult = []
+// // je parcours mon tableau initial, et je créer un nouveau tableau ou j'assine la valeur de tableau initial [taille tableau - i]
 // for (let i = 0; i < myArray.length; i++) {
 //   arrayResult[i] = myArray[myArray.length - i - 1]
 // }
 // result.innerHTML += `<p>tableau inversé : </p><p>${arrayResult.toString()}</p>`
 
-//version js
+//version js : methode reverse :
+// * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
 result.innerHTML += `<p>tableau inversé : </p><p>${myArray.reverse()}</p>`
 */
 
@@ -112,6 +114,9 @@ result.innerHTML = `<p>tableau de départ : </p><p>${myArray.toString()}</p>`
 const nb = parseInt(
   prompt("Quel case souhaitez-vous supprimer (1ere case = 1)?")
 )
+
+// j'utilise la méthode splaice pour supprimer une case identifié de mon tableau : 
+// * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/splicev
 myArray.splice(nb - 1, 1)
 
 result.innerHTML += `<p>tableau après suppression : </p><p>${myArray.toString()}</p>`
@@ -132,12 +137,16 @@ let myArray = [
 const recherche = prompt("Quel mot chechez vous ?")
 
 //version foreach
-let isFind = false
+let isFind = false  // je créer un booléen pour determiner si j'ai trouvé ou non
 
+// je parcours mon tableau
+// * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 myArray.forEach((value) => {
+	// si je trouve le terme recherché, je passe le booléen a vrai
   if (value === recherche) isFind = true
 })
 
+// je n'ai plus qu'a tester en booléen pour en déduire le résultat de la recherche
 if (isFind) {
   console.log(`${recherche} trouvé dans ${myArray.toString()}`)
 } else {
@@ -145,6 +154,7 @@ if (isFind) {
 }
 
 //version JS
+// * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/find
 // const resultat = myArray.find((mot) => mot === recherche)
 
 // if (resultat !== undefined) {

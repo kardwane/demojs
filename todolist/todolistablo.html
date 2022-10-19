@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>totdolist</title>
+    <link rel="stylesheet" href="./assets/css/todolistablo.css" />
+  </head>
+  <body>
+    <!-- formulaire d'ajout de tâche -->
+    <form action="" id="form">
+      <label for="todoTitle">
+        Titre de la Tâche
+        <input type="text" name="todoTitle" id="todoTitle" />
+      </label>
+      <label for="todoDesc">
+        Description de la Tâche
+        <input type="text" name="todoDesc" id="todoDesc" />
+      </label>
+      <input type="submit" value="Ajouter" id="addBtn" />
+    </form>
+    <div id="todosCount"></div>
+    <div id="todolist">
+      <table>
+        <thead>
+          <tr>
+            <td>Tâche</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody id="todoTableBody"></tbody>
+      </table>
+    </div>
+    <script src="./assets/js/todolistablo.js"></script>
+  </body>
+</html>

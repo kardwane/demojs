@@ -12,6 +12,6 @@ addBtn.onclick=(e)=>{
     todo.id = "todo"+todoCounter
     todo.innerHTML = `<h3>${todoTitle.value}</h3><p>${todoDesc.value}</p>`
 
-    //ajout de la todo
+    //ajout de la to-do
     todolist.appendChild(todo)
 }

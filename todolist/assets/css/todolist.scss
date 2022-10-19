@@ -5,6 +5,7 @@
 body {
   margin: auto 5vw;
   display: flex;
+  flex-direction: column;
 
   #form {
     display: flex;
@@ -12,14 +13,16 @@ body {
     align-items: center;
     width: 90vw;
     padding-top: 3vh;
-    label{
-        margin-bottom: 0.5em;
+
+    label {
+      margin-bottom: 0.5em;
     }
   }
 }
 
 .listTitle {
   display: flex;
+
   p:nth-child(2) {
     margin-left: 1em;
   }

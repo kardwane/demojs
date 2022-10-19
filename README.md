@@ -11,6 +11,21 @@ les notions abordés par ces exercices sont :
 - les tableaux multidimensionnels
 - les fonctions
 
+En plus des exercices d'algo, vous trouverez d'autres projets, tel que
+
+- des exemples de fonctionnalités JS courante
+  - manipulation du DOM
+  - regex
+  - intersection observer
+  - le storage
+  - fetch et promesse
+  - les modules
+  - les base de la POO
+  - exemples de librairies JS 
+- un juste prix
+- une todolist
+- un pendu (prochainement)
+
 ****
 
 ## Les variables
@@ -48,7 +63,7 @@ part 5
 ****
 
 ## Les boucles avec les tableaux
-Ils permettent de stocker plusieurs valeurs dans une même variable
+Cette partie permet de découvrir comment utiliser les boucles et les tableaux ensembles
 
 ### Exercices concernés
 part 6
@@ -56,7 +71,7 @@ part 6
 ****
 
 ## Le tri
-Comme son nom l'indique cette partie s'interesse au tri des tableaux
+Comme son nom l'indique cette partie s'intéresse au tri des tableaux
 
 ### Exercices concernés
 part 7

@@ -5,7 +5,7 @@ const result = document.querySelector("#result")
 const supprimeP = document.querySelector("#supprimeP")
 const themeName = document.querySelector(".theme-name")
 
-themeLink.onmouseover = () => {
+themeLink.onmouseover = (e) => {
   if (pageBody.classList.contains("dark-mode")) {
     pageBody.classList.remove("dark-mode")
     themeName.textContent = "Dark mode"
@@ -13,9 +13,11 @@ themeLink.onmouseover = () => {
     pageBody.classList.add("dark-mode")
     themeName.textContent = "Light mode"
   }
+  console.log(e.target.id)
 }
 
-addLorem.addEventListener("click", function () {
+addLorem.addEventListener("click", function (e) {
+  console.log(e.target.id)
   //je créer mon nouvel élément
   let newP = document.createElement("p") // création en mémoire
 
@@ -41,12 +43,18 @@ addLorem.addEventListener("click", function () {
   }
   newP.id = "newP" + newIdP
 
+  //j'ajoute une action à mon élément
+  newP.addEventListener("click", function (e) {
+    console.log(e.target.id)
+  })
+
   // une fois prêt, je l'ajoute a mon doument HTML
   result.appendChild(newP)
 })
 
 //ajout de l'action de suppression
-supprimeP.addEventListener("click", () => {
+supprimeP.addEventListener("click", (e) => {
   //je supprime le 1ere element de la liste de paragraphe avec la méthode remove()
-  document.querySelectorAll("#result p")[0].remove()
+  console.log(e.target.id)
+  // document.querySelectorAll("#result p")[0].remove()
 })

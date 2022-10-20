@@ -6,24 +6,64 @@ body {
   margin: auto 5vw;
   display: flex;
   flex-direction: column;
+  background-color: rgba($color: #151414, $alpha: 0.8);
+  color: aliceblue;
+
+  h1{
+    text-align: center;
+    width: 100%;
+    background-color: rgba($color: #807676, $alpha: 0.6);
+  }
 
   #form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     width: 90vw;
     padding-top: 3vh;
 
     label {
       margin-bottom: 0.5em;
+      margin-top: 0.3em;
+    }
+  }
+
+  .listTitle {
+    display: flex;
+  
+    p{
+      text-align: center; 
+    }
+    p:first-child {
+      width: 70vw;
+    }
+    p:last-child{
+      width: 20vw;
+    }
+  }
+
+  article{
+    display: flex;
+    margin: 5vh 0;
+    div:first-child{
+      width: 70vw;
+      
+    }
+
+    #todoDescUpdate{
+      width: 60vw;
+      height: 2em;
+    }
+
+    div{
+      text-align: center;
+    }
+    div:last-child{
+      width: 20vw;
     }
   }
 }
 
-.listTitle {
-  display: flex;
-
-  p:nth-child(2) {
-    margin-left: 1em;
-  }
+.action-icon{
+  margin-left: 1em;
+  width: 2vw;
 }

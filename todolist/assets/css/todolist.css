@@ -1,1 +1,87 @@
-.task-done{text-decoration:line-through}body{margin:auto 5vw;display:flex;flex-direction:column;background-color:rgba(21,20,20,.8);color:#f0f8ff}body h1{text-align:center;width:100%;background-color:rgba(128,118,118,.6)}body #form{display:flex;justify-content:center;width:90vw;padding-top:3vh}body #form label{margin-bottom:.5em;margin-top:.3em}body .listTitle{display:flex}body .listTitle p{text-align:center}body .listTitle p:first-child{width:70vw}body .listTitle p:last-child{width:20vw}body article{display:flex;margin:5vh 0}body article div:first-child{width:70vw}body article #todoDescUpdate{width:60vw;height:2em}body article div{text-align:center}body article div:last-child{width:20vw}.action-icon{margin-left:1em;width:2vw}
+body {
+  margin: auto 5vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(21, 20, 20, 0.8);
+  color: aliceblue;
+  /* The Modal (background) */
+  /* Modal Content/Box */
+  /* The Close Button */ }
+  body h1 {
+    text-align: center;
+    width: 100%;
+    background-color: rgba(128, 118, 118, 0.6); }
+  body #form {
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    padding-top: 3vh; }
+    body #form label {
+      margin-bottom: 0.5em;
+      margin-top: 0.3em; }
+  body .listTitle {
+    display: flex; }
+    body .listTitle p {
+      text-align: center; }
+    body .listTitle p:first-child {
+      width: 70vw; }
+    body .listTitle p:last-child {
+      width: 20vw; }
+  body article {
+    display: flex;
+    margin: 5vh 0; }
+    body article div:first-child {
+      width: 70vw; }
+    body article #todoDescUpdate {
+      width: 60vw;
+      height: 2em; }
+    body article div {
+      text-align: center; }
+    body article div:last-child {
+      width: 20vw; }
+  body .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: black;
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */ }
+  body .modal-content {
+    background-color: rgba(15, 15, 15, 0.7);
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */ }
+  body .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold; }
+  body .close:hover,
+  body .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer; }
+
+.action-icon {
+  margin-left: 1em;
+  width: 2vw; }
+
+.task-done {
+  text-decoration: line-through; }
+
+/*# sourceMappingURL=todolist.css.map */

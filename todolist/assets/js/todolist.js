@@ -32,6 +32,7 @@ const readTodos = () => {
 //se concentre sur l'affichage d'une seule to-do
 const displayTodo = (todoDesc, todoId) => {
     const todo = document.createElement("article")
+    todo.classList.add('fadein')
     todo.id = "todo" + todoId
     todo.innerHTML = `
   <div id="todoDescription">${todoDesc}</div>
@@ -54,7 +55,7 @@ const createUpdateTodo = (id) => {
   Description de la Tâche
   </label>
   <input type="text" id="todoDescUpdate" />
-    <a href="#" onclick="doUpdateTodo(${id})"><img class="action-icon" src="./assets/img/validate.png"></a>
+    <a href="#" onclick="doUpdateTodo(${id})"><img class="action-icon" src="./assets/img/validate.png" alt="validate"></a>
   `
     // gère la maj sur la touche "entrer" du clavier
     document.querySelector("#todoDescUpdate").onkeyup=(e)=>{
@@ -75,11 +76,17 @@ const strikeTodo = (id) => {
 }
 
 const removeTodo = (id) => {
-    //on supprime la to-do du tableau
-    todos.splice(id, 1)
+    const todo = document.querySelector("#todo"+id)
+    todo.classList.remove('fadein')
+    todo.classList.add('fadeout')
     closeModal() // ferme la modal
-    //on rafraichit l'affichage de la liste
-    readTodos()
+    setTimeout(()=>{
+        //on supprime la to-do du tableau
+        todos.splice(id, 1)
+        //on rafraichit l'affichage de la liste
+        readTodos()
+    },2000)
+
 }
 
 const popupModal = (id) => {

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
   margin: auto 5vw;
@@ -6,6 +6,8 @@ body {
   flex-direction: column;
   background-color: rgba($color: #151414, $alpha: 0.8);
   color: aliceblue;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 
   h1{
     text-align: center;
@@ -42,6 +44,12 @@ body {
   article{
     display: flex;
     margin: 5vh 0;
+    align-items: center;
+
+    label{
+      margin-right: 1em;
+    }
+
     div:first-child{
       width: 70vw;
       
@@ -106,4 +114,22 @@ body {
 
 .task-done {
   text-decoration: line-through;
+}
+
+.fadein{
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fadeout{
+  animation: fadeOut 2s;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }

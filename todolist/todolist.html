@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
     <title>totdolist</title>
     <link rel="stylesheet" href="./assets/css/uicons-regular-straight.css" />
+=======
+    <title>Todo List</title>
+>>>>>>> 579fb8edc7af1b807666e955536e7b27d8ab162e
     <link rel="stylesheet" href="./assets/css/todolist.css" />
+    <script src="./assets/js/todolist.js" async></script>
   </head>
   <body>
+<<<<<<< HEAD
     <header></header>
     <main>
       <h1>
@@ -45,5 +51,42 @@
     </main>
     <footer></footer>
     <script src="./assets/js/todolist.js"></script>
+=======
+    <h1>
+      <img src="./assets/img/todolist-banner-removebg-preview.png" alt="Todolist JS">
+    </h1>
+    <!-- formulaire d'ajout de tâche -->
+    <form action="" id="form">
+      <!-- <label for="todoTitle">
+        Titre de la Tâche
+        <input type="text" name="todoTitle" id="todoTitle" />
+      </label> -->
+      <label for="todoDesc">
+        Description de la Tâche
+        <input type="text" name="todoDesc" id="todoDesc" />
+      </label>
+      <a href="#"><img class="action-icon" src="./assets/img/add.png" alt="AJOUTER" id="addBtn"></a>
+    </form>
+    <div id="todosCount"></div>
+    <section class="listTitle">
+      <p>Tâche</p>
+      <p>Actions</p>
+    </section>
+    <section id="todolist"></section>
+    <section id="appModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" id="closeModalSpan" >&times;</span>
+        <form action="#" id="modalForm">
+          <h3>Voulez-vous supprimer cette tâche</h3>
+          <div>
+            <button id="deleteConfirm">Oui</button>
+            <button id="closeModalBtn">Non</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+>>>>>>> 579fb8edc7af1b807666e955536e7b27d8ab162e
   </body>
 </html>

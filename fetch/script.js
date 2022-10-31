@@ -21,7 +21,8 @@ function handleFetch(responseText) {
     }
 }
 function showResult(data){
-    // { id: 216, type: "general", setup: "What do you call a fashionable lawn statue with an excellent sense of rhythmn?", punchline: "A metro-gnome" }
+    // { id: 216, type: "general", setup: "What do you call a fashionable lawn statue with an excellent sense of rhythmn?"
+    // , punchline: "A metro-gnome" }
     console.log(data);
     //je rempli ma page avec les reponses de l'API
     document.querySelector("#jokeId").textContent = `joke n° : ${data.id}`

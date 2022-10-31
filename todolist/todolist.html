@@ -5,31 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>totdolist</title>
+    <link rel="stylesheet" href="./assets/css/uicons-regular-straight.css" />
     <link rel="stylesheet" href="./assets/css/todolist.css" />
   </head>
   <body>
-    <h1>
-      <img src="./assets/img/todolist-banner-removebg-preview.png">
-    </h1>
-    <!-- formulaire d'ajout de tâche -->
-    <form action="" id="form">
-      <!-- <label for="todoTitle">
-        Titre de la Tâche
-        <input type="text" name="todoTitle" id="todoTitle" />
-      </label> -->
-      <label for="todoDesc">
-        Description de la Tâche
-        <input type="text" name="todoDesc" id="todoDesc" />
-      </label>
-      <a href="#"><img class="action-icon" src="./assets/img/add.png" alt="AJOUTER" id="addBtn"></a>
-      <!-- <input type="submit" value="Ajouter" id="addBtn" /> -->
-    </form>
-    <div id="todosCount"></div>
-    <section class="listTitle">
-      <p>Tâche</p>
-      <p>Actions</p>
-    </section>
-    <section id="todolist"></section>
+    <header></header>
+    <main>
+      <h1>
+        <img src="./assets/img/todolist-banner-removebg-preview.png" />
+      </h1>
+      <!-- formulaire d'ajout de tâche -->
+      <form action="" id="form">
+        <input
+          type="text"
+          name="todoDesc"
+          id="todoDesc"
+          placeholder="Description de la Tâche"
+        />
+        <a href="#" class="action-container">
+          <i class="fi fi-rs-add action-icon" id="addBtn"></i>
+        </a>
+      </form>
+      <section class="listTitle" title="todolist title">
+        <p>Tâche</p>
+        <p>Actions</p>
+      </section>
+      <section id="todolist" title="todos list"></section>
+      <div id="appModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Voulez-vous vraiment supprimer cette tâche?</p>
+          <form action="#">
+            <button class="modal-btn" id="modalYesBtn">Oui</button>
+            <button class="modal-btn" onclick="closeModal()">Non</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
     <script src="./assets/js/todolist.js"></script>
   </body>
 </html>
